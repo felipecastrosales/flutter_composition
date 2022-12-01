@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'pages/base/base.dart';
+import 'pages/base/implementation/child_class.dart';
+import 'pages/base/implementation/parent_class.dart';
 import 'pages/composite_page.dart';
 import 'pages/default_page.dart';
 import 'pages/parent_page.dart';
@@ -51,6 +54,42 @@ class SelectPages extends StatelessWidget {
                 );
               },
               child: const Text('Parent'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WidgetFoo(),
+                  ),
+                );
+              },
+              child: const Text('Base'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ParentClass(),
+                  ),
+                );
+              },
+              child: const Text('Parent Class'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ChildClass(),
+                  ),
+                );
+              },
+              child: const Text('Child Class'),
             ),
           ],
         ),
