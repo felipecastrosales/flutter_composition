@@ -1,18 +1,28 @@
-// I get this example from: https://stackoverflow.com/a/62856604/13096514
-
 import 'package:flutter/material.dart';
-import 'package:flutter_composition/pages/base/base.dart';
 
-class ChildClass extends WidgetFoo {
+import 'parent_class.dart';
+
+class ChildClass extends ParentClass {
   const ChildClass({super.key});
 
   @override
   State<StatefulWidget> createState() => _ChildClassState();
 }
 
-class _ChildClassState extends WidgetFooState<ChildClass> {
+class _ChildClassState extends ParentClassState<ChildClass> {
   @override
-  String getText() {
-    return 'ChildClass, $varFromFooState, ${widget.varFromFoo}';
+  Widget build(BuildContext context) {
+    // parentText = 'text coming from child class';
+    child = Text(
+      'ChildClass, $parentText, ${widget.varFromParent}',
+    );
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ChildClass'),
+      ),
+      body: Center(
+        child: child,
+      ),
+    );
   }
 }

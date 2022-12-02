@@ -2,21 +2,28 @@ import 'package:flutter/material.dart';
 
 class ParentClass extends StatefulWidget {
   const ParentClass({super.key});
-  final String varFromFoo = 'foo';
+  final String varFromParent = 'foo';
 
   @override
   State<StatefulWidget> createState() => ParentClassState<ParentClass>();
 }
 
-// Don't make this class name private (beginning with _) to allow its usage in other modules.
 class ParentClassState<T extends StatefulWidget> extends State<T> {
-  String varFromFooState = 'foo state';
+  String parentText = 'text coming from parent class';
+  Widget child = const Text(
+    // 'Parent class, $parentText, ${widget.varFromParent}',
+    'Parent class',
+  );
+
   @override
   Widget build(BuildContext context) {
-    return Text(getText());
-  }
-
-  String getText() {
-    return 'ParentClass';
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('ParentClass'),
+      ),
+      body: Center(
+        child: child,
+      ),
+    );
   }
 }
