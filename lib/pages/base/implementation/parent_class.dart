@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'page_model.dart';
+
 class ParentClass extends StatefulWidget {
   const ParentClass({super.key});
   final String varFromParent = 'foo';
@@ -14,16 +16,26 @@ class ParentClassState<T extends StatefulWidget> extends State<T> {
     // 'Parent class, $parentText, ${widget.varFromParent}',
     'Parent class',
   );
+  Widget child2 = const Text('declared in parent class');
+  Widget child3 = Stack(
+    children: [
+      Container(color: Colors.red, height: 100, width: 100),
+      const Text('child3 parent'),
+    ],
+  );
+  String title = 'ParentClass';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ParentClass'),
-      ),
-      body: Center(
-        child: child,
-      ),
+    return PageModel(
+      title: title,
+      children: [
+        child,
+        const Text('internal'),
+        Text(parentText),
+        child2,
+        child3,
+      ],
     );
   }
 }
