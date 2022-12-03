@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-class CompositePage extends StatelessWidget {
-  const CompositePage({super.key});
+class CounterParentPage extends StatelessWidget {
+  const CounterParentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MyCompositePage(title: 'Composite Page');
+    return const MyCounterParentPage(title: 'Parent Page');
   }
 }
 
-class MyCompositePage extends StatefulWidget {
-  const MyCompositePage({super.key, required this.title});
+class MyCounterParentPage extends StatefulWidget {
+  const MyCounterParentPage({super.key, required this.title});
   final String title;
 
   @override
-  State<MyCompositePage> createState() => _MyCompositePageState();
+  State<MyCounterParentPage> createState() => _MyCounterParentPageState();
 }
 
-class _MyCompositePageState extends State<MyCompositePage> {
+class _MyCounterParentPageState extends State<MyCounterParentPage> {
   int _counter = 0;
 
   void _incrementCounter() {
