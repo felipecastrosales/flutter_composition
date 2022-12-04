@@ -38,11 +38,11 @@ class SelectPages extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CounterChildPage(),
+                    builder: (context) => const CounterParentPage(),
                   ),
                 );
               },
-              child: const Text('Child'),
+              child: const Text('Parent'),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -50,11 +50,11 @@ class SelectPages extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CounterParentPage(),
+                    builder: (context) => const CounterChildPage(),
                   ),
                 );
               },
-              child: const Text('Parent'),
+              child: const Text('Child'),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -98,9 +98,7 @@ class SelectPages extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CounterPage(
-                        // counterText: 'Counter Page',
-                        ),
+                    builder: (context) => const CounterPage(),
                   ),
                 );
               },
