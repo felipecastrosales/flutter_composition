@@ -5,8 +5,8 @@ import 'pages/base/implementation/child_class.dart';
 import 'pages/base/implementation/parent_class.dart';
 import 'pages/counter/counter_child_page.dart';
 import 'pages/counter/counter_page.dart';
-import 'pages/default_page.dart';
 import 'pages/counter/counter_parent_page.dart';
+import 'pages/default_page.dart';
 
 class SelectPages extends StatelessWidget {
   const SelectPages({super.key});
@@ -38,11 +38,11 @@ class SelectPages extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CounterCompositePage(),
+                    builder: (context) => const CounterChildPage(),
                   ),
                 );
               },
-              child: const Text('Composite'),
+              child: const Text('Child'),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
@@ -99,9 +99,8 @@ class SelectPages extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const CounterPage(
-                      title: 'Counter Page',
-                      counter: 0,
-                    ),
+                        // counterText: 'Counter Page',
+                        ),
                   ),
                 );
               },

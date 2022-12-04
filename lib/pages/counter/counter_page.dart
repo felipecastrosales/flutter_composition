@@ -7,12 +7,10 @@ import 'controller/counter_controller.dart';
 class CounterPage extends StatefulWidget {
   const CounterPage({
     super.key,
-    required this.title,
-    required this.counter,
+    this.counterText,
   });
 
-  final String title;
-  final int counter;
+  final String? counterText;
 
   @override
   State<CounterPage> createState() => _CounterPageState();
@@ -26,7 +24,7 @@ class _CounterPageState extends State<CounterPage> {
       create: (_) => CounterController(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: const Text('Counter Page'),
         ),
         body: Center(
           child: Column(
@@ -37,7 +35,7 @@ class _CounterPageState extends State<CounterPage> {
               ),
               Consumer<CounterController>(
                 builder: (context, controller, child) => Text(
-                  '${controller.counter}',
+                  widget.counterText ?? '${controller.counter}',
                   style: Theme.of(context).textTheme.headline4,
                 ),
               ),
