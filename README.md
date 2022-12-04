@@ -1,16 +1,14 @@
-# flutter_composition
+# Composition with Flutter
 
-A new Flutter project.
+In Flutter, **Composition** is preferred over **Inheritence**.
 
-## Getting Started
+Researching how to flow classes and subclasses with Flutter, I found some interesting content and decided to test some flows in practice.
 
-This project is a starting point for a Flutter application.
+See come cool links below: 
 
-A few resources to get you started if this is your first Flutter project:
+* [Subclass a class that extends StatelessWidget or StatefulWidget class](https://stackoverflow.com/questions/51476234/subclass-a-class-that-extends-statelesswidget-or-statefulwidget-class)
+  * [I decided to test this approach, as it was a little more off the curve](https://stackoverflow.com/a/62856604/13096514).
+* But there are other interesting strategies that I haven't tried. Such as: 
+  * [Creating a Base Screen in Flutter using an abstract class and mixin](https://pbhoomi190.medium.com/creating-a-base-screen-in-flutter-using-an-abstract-class-and-mixin-3c0001b74c8c).
+  * [Flutter mixin with abstract class](https://stackoverflow.com/questions/59316554/flutter-mixin-with-abstract-class).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
